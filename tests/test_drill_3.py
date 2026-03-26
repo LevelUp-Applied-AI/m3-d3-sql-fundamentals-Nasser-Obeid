@@ -8,7 +8,7 @@ def test_drill_queries_file_exists():
 
 
 def test_top_departments():
-    from src.drill_queries import top_departments
+    from ..src.drill_queries import top_departments
     result = top_departments("drill.db")
     assert isinstance(result, list), "top_departments should return a list"
     assert len(result) == 3, f"Expected 3 departments, got {len(result)}"
@@ -19,7 +19,7 @@ def test_top_departments():
 
 
 def test_employees_with_projects():
-    from src.drill_queries import employees_with_projects
+    from ..src.drill_queries import employees_with_projects
     result = employees_with_projects("drill.db")
     assert isinstance(result, list), "employees_with_projects should return a list"
     assert len(result) > 0, "Expected at least one employee-project pair"
@@ -30,7 +30,7 @@ def test_employees_with_projects():
 
 
 def test_salary_rank_by_department():
-    from src.drill_queries import salary_rank_by_department
+    from ..src.drill_queries import salary_rank_by_department
     result = salary_rank_by_department("drill.db")
     assert isinstance(result, list), "salary_rank_by_department should return a list"
     assert len(result) > 0, "Expected at least one row"
